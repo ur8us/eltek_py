@@ -157,6 +157,17 @@ def make_set_voltage_payload(voltage_v: float) -> bytes:
     return bytes([0x29, 0x15, 0x00, centivolts & 0xFF, (centivolts >> 8) & 0xFF])
 
 
+def validate_psu_id(text: str) -> int:
+    try:
+        value = int(text)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(f"invalid PSU ID: {text!r}") from exc
+
+    if not 1 <= value <= 63:
+        raise argparse.ArgumentTypeError("PSU ID must be between 1 and 63")
+    return value
+
+
 def validate_stored_voltage(text: str) -> float:
     try:
         value = float(text)
@@ -220,7 +231,7 @@ def handle_frame(
     if (can_id & ELTEK_LOGIN_PLEASE_MASK) == ELTEK_LOGIN_PLEASE_PATTERN and len(data) >= 6:
         psu_id = (can_id >> 16) & 0xFF
         state.psu_id = psu_id
-        state.serial_number = data[0:4]
+        state.serial_number = data[0:6]
         return False
 
     # CAN bus intro: 0x0500XXXX
@@ -372,7 +383,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--psu-id",
-        type=int,
+        type=validate_psu_id,
         default=1,
         help="PSU ID (1-63), default: 1",
     )
