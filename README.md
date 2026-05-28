@@ -156,10 +156,10 @@ Run the default telemetry reader:
 ./read.sh
 ```
 
-Set the default voltage to `58.0` V:
+Set the default voltage to `48.0` V:
 
 ```bash
-./set-58v.sh
+./set-48v.sh
 ```
 
 Set the default voltage to `50.0` V:
@@ -172,12 +172,6 @@ Set the default voltage to `53.5` V:
 
 ```bash
 ./set-53.5v.sh
-```
-
-Set the default voltage to `48.0` V:
-
-```bash
-./set-48v.sh
 ```
 
 `on.sh` and `off.sh` now print the same not-implemented message as `--set-output`.
