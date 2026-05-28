@@ -48,7 +48,6 @@ XX = PSU ID. Payload: [0x29, 0x15, 0x00, centivolts_L, centivolts_H]. Voltage ta
 - `on.sh`: placeholder helper script for output on
 - `off.sh`: placeholder helper script for output off
 - `set-48v.sh`: one-shot helper script for stored voltage `48.0` V
-- `set-58v.sh`: one-shot helper script for stored voltage `58.0` V
 - `set-50v.sh`: one-shot helper script for stored voltage `50.0` V
 - `set-53.5v.sh`: one-shot helper script for stored voltage `53.5` V
 - `README.md`: GitHub-facing documentation and setup instructions

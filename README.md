@@ -38,7 +38,6 @@ Output on/off commands are not implemented. If you run `--set-output on` or `--s
 - `set-48v.sh`: set default voltage to `48.0` V
 - `set-50v.sh`: set default voltage to `50.0` V
 - `set-53.5v.sh`: set default voltage to `53.5` V
-- `set-58v.sh`: set default voltage to `58.0` V
 - `requirements.txt`: Python dependencies
 - `99-canalystii.rules`: udev rule for USB access to CANalyst-II adapters on Linux
 - `AGENTS.md`: instructions for coding agents working on this repository
