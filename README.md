@@ -25,7 +25,7 @@ The script supports:
 
 When used, the script sends the default-voltage write command (`0x05XX9C00`) to the PSU. The voltage is encoded in centivolts (little-endian) and takes effect when the PSU logs out (approximately 15 seconds after the last login message).
 
-Stored voltage is validated to the range `42.0` to `63.0` V.
+Stored voltage is validated to the range `43.5` to `57.6` V (the Flatpack2 48/2000 HE adjustable range).
 
 Output on/off commands are not implemented. If you run `--set-output on` or `--set-output off`, the script prints a not-implemented message and exits.
 
